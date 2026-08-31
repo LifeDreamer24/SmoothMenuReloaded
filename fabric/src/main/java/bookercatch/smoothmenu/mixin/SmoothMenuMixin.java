@@ -24,7 +24,7 @@ public abstract class SmoothMenuMixin {
     @Inject(method = "getFramerateLimit", at = @At("HEAD"), cancellable = true)
     private void smoothmenu$uncapMenu(CallbackInfoReturnable<Integer> cir) {
         if (this.getThrottleReason() == FramerateLimitTracker.FramerateThrottleReason.OUT_OF_LEVEL_MENU
-                || this.minecraft.screen != null && this.minecraft.screen.isPauseScreen()) {
+                || ((MinecraftAccessor) this.minecraft).smoothmenu$getGui().isPausing()) {
             cir.setReturnValue(this.framerateLimit);
         }
     }

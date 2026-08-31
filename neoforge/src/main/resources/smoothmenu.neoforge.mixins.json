@@ -2,6 +2,7 @@
   "required": true,
   "package": "bookercatch.smoothmenu.mixin",
   "client": [
+    "MinecraftAccessor",
     "SmoothMenuMixin"
   ],
   "injectors": {
@@ -9,5 +10,4 @@
   },
   "minVersion": "0.8"
 }
-
 
